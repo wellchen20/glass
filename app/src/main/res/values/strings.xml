@@ -1,0 +1,121 @@
+<resources>
+    <string name="app_name">远程协作</string>
+
+    <string name="main_join_meeting">加入会议</string>
+    <string name="text_settings">设置</string>
+    <string name="text_meeting_number">会议号</string>
+    <string name="text_random_meeting_number">随机会议号</string>
+    <string name="text_open_camera">开启摄像头</string>
+    <string name="text_open_mic">开启麦克风</string>
+
+    <string name="text_input_meeting_number">请输入会议号</string>
+    <string name="alert_meeting_effective_time">已为您创建随机会议号，请在24小时内使用</string>
+    <string name="alert_know">我知道了</string>
+    <string name="alert_waiting">请稍后</string>
+    <string name="alert_init_error">初始化失败</string>
+    <string name="alert_finish">退出重试</string>
+    <string name="toast_create_meeting_fail">获取会议室号失败, 请重试</string>
+
+    <string name="switch_camera">切换摄像头</string>
+    <string name="mute_mic">静音</string>
+    <string name="switch_call_module">语音模式</string>
+    <string name="close_switch_call_module">语音退出</string>
+    <string name="cell_state_pstn_incall">通话中...</string>
+    <string name="cell_state_audio_only_incall">语音通话中</string>
+    <string name="bottom_bar_share">共享</string>
+    <string name="bottom_bar_host_meeting">主持会议</string>
+
+    <string name="close_video">关闭摄像头</string>
+    <string name="open_video">打开摄像头</string>
+    <string name="pstn_app_cell_text">电话语音</string>
+
+
+    <string name="start_record_video">录制</string>
+    <string name="call_video_mute">视频暂停</string>
+    <string name="call_no_video">网络不给力，暂时无法接收视频</string>
+    <string name="MuteByNoInput">对方未开启视频</string>
+
+    <string name="MuteByUser">对方忙，暂时关闭视频</string>
+    <string name="MuteByBWLimit">对方网络不稳定，无法传输视频</string>
+    <string name="MuteByConfMgmt">对方视频已被主持人关闭</string>
+
+    <string name="button_text_stop">停止录制</string>
+    <string name="third_conf_record_notice">录制完成，录制视频已保存到云会议室管理员的文件夹</string>
+    <string name="recording_text_preparing">录制中 00:00:00</string>
+
+    <string name="im_notification_ccs_transfer">正在转接中，请稍候</string>
+
+
+    <string name="queen_top_part">在您之前还有</string>
+    <string name="queen_bottom_part">位用户正在等待</string>
+    <string name="locked_people">主屏已锁定</string>
+    <string name="unlock_people">解锁</string>
+
+
+    <string name="statistics_network">网络探测</string>
+    <string name="statistics_content">内容共享</string>
+    <string name="statistics_participant">与会者</string>
+    <string name="statistics_local_name">本地</string>
+    <string name="statistics_channel_name">通道名称</string>
+    <string name="statistics_codec">Codec</string>
+    <string name="statistics_resolution">分辨率</string>
+    <string name="statistics_frame_rate">帧率(fps)</string>
+    <string name="statistics_band_width">带宽(kbps)</string>
+    <string name="statistics_bit_rate">码率(kbps)</string>
+    <string name="statistics_atx">音频发送</string>
+    <string name="statistics_arx">音频接收</string>
+    <string name="statistics_vtx">视频发送</string>
+    <string name="statistics_vrx">视频接收</string>
+    <string name="statistics_rtt">往返时延(ms)</string>
+    <string name="statistics_jitter">抖动(ms)</string>
+    <string name="statistics_package_lost">丢包率(%)</string>
+    <string name="statistics_tx">发送</string>
+    <string name="statistics_rx">接收</string>
+    <string name="call_dtmf_keyboard">键盘</string>
+    <string name="switch_layout">切换布局</string>
+    <string name="button_close_pip">关闭小窗</string>
+    <string name="default_feedback_content">请输入您的宝贵意见和建议</string>
+    <string name="send_feedback">发送</string>
+    <string name="feedback_success">已收录，感谢您的反馈</string>
+    <string name="feedback">快速反馈</string>
+
+
+    <string name="dtmf_0">0</string>
+    <string name="dtmf_1">1</string>
+    <string name="dtmf_2">2</string>
+    <string name="dtmf_3">3</string>
+    <string name="dtmf_4">4</string>
+    <string name="dtmf_5">5</string>
+    <string name="dtmf_6">6</string>
+    <string name="dtmf_7">7</string>
+    <string name="dtmf_8">8</string>
+    <string name="dtmf_9">9</string>
+    <string name="dtmf_s">*</string>
+    <string name="dtmf_p">#</string>
+
+
+    <!-- log releated strings -->
+    <string name="cancel">取消</string>
+    <string name="string_ext_id">企业ID:</string>
+    <string name="string_input_ext_id_hint">请输入企业id</string>
+    <string name="string_private_host">PrivateHost:</string>
+    <string name="string_input_private_host_hint">请输入PrivateHost</string>
+    <string name="string_dev_host">Dev环境</string>
+    <string name="string_prd_host">Prd环境</string>
+    <string name="string_host_select">环境选择:</string>
+    <string name="string_save">保存</string>
+    <string name="string_private_mode">私有云模式:</string>
+    <string name="string_xy_prd_ext_id">小鱼Prd企业Id:</string>
+    <string name="string_xy_dev_ext_id">小鱼Dev企业Id:</string>
+    <string name="string_long_click_input_hint">长按下面的企业ID可填写到下方的企业Id输入框</string>
+
+    <string name="clear_white_board_title">清空白板</string>
+    <string name="exit_white_board_title">关闭白板</string>
+    <string name="clear_white_board_content">点击“确定”按钮将会清空白板中的所有内容</string>
+    <string name="exit_white_board_content">点击“确定”按钮将会使通话中的人退出白板功能</string>
+    <string name="sure">确定</string>
+    <string name="share_screen_permission_tips">分享屏幕会使应用处于后台, 如果要通过悬浮窗按钮返回到应用程序, 则需要手动开＜后台弹出界面＞权限, 否则无法通过悬浮窗按钮打开应用, 需要手动点击应用程序图标回到APP</string>
+
+    <string name="call_share_screen_txt1">当前正在共享手机屏幕</string>
+    <string name="call_share_screen_txt2">可按Home键，打开其他应用进行共享</string>
+</resources>

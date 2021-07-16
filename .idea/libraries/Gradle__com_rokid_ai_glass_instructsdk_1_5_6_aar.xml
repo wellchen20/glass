@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.rokid.ai.glass:instructsdk:1.5.6@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/de949a8fbd3712810d932db25db466bc/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/de949a8fbd3712810d932db25db466bc/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.rokid.ai.glass/instructsdk/1.5.6/dc68fb428f48ec71de488a9467a4ec04fe123285/instructsdk-1.5.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

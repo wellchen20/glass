@@ -1,0 +1,32 @@
+buildscript {
+    apply from: "${rootDir}/config.gradle"
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        customMaven.each {name, mavenURL ->
+            maven { url mavenURL }
+        }
+    }
+    dependencies {
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
+        gradlePlugins.each { name, plugin -> classpath plugin }
+
+    }
+}
+
+allprojects {
+    apply from: "${rootDir}/config.gradle"
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        customMaven.each {name, mavenURL ->
+            maven { url mavenURL }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

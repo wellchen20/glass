@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MuteImageView">
+        <attr name="mutePhoto" format="reference" />
+        <attr name="unmutePhoto" format="reference" />
+        <attr name="isMute" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="vpiCirclePageIndicatorStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CirclePageIndicator">
+        <attr name="centered" format="boolean" />
+        <attr name="fillColor" format="color" />
+        <attr name="pageColor" format="color" />
+        <attr name="android:orientation" />
+        <attr name="radius" format="dimension" />
+        <attr name="snap" format="boolean" />
+        <attr name="strokeColor" format="color" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="android:background" />
+    </declare-styleable>
+
+    <declare-styleable name="PasswordEditText">
+        <!--密码框的颜色-->
+        <attr name="psw_border_color" format="color" />
+        <!--密码框选中的颜色-->
+        <attr name="psw_border_selected_color" format="color" />
+        <!--圆形密码颜色-->
+        <attr name="psw_text_color" format="color" />
+        <!--密码框的圆角-->
+        <attr name="psw_border_radius" format="dimension" />
+        <!--密码框的线的大小-->
+        <attr name="psw_border_width" format="dimension" />
+        <!--密码框背景色-->
+        <attr name="psw_background_color" format="color" />
+        <!--密码圆形遮盖颜色-->
+        <attr name="psw_cover_circle_color" format="color" />
+        <!--密码圆形遮盖半径-->
+        <attr name="psw_cover_circle_radius" format="dimension" />
+    </declare-styleable>
+
+</resources>

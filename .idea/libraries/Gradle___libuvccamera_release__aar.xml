@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: :libuvccamera-release:@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4a425dde48997ff32a790a0f6149c25a/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4a425dde48997ff32a790a0f6149c25a/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

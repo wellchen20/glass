@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dimen_dialog_width"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog"
+    android:paddingBottom="@dimen/dimen_dialog_padding_bottom">
+
+    <ImageView
+        android:id="@+id/dialog_top_image_iv"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_top_image_iv"
+        android:background="@color/color_dialog_bg">
+
+        <TextView
+            android:id="@+id/dialog_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/dimen_dialog_margin_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/dimen_dialog_margin_horizontal"
+            android:lines="1"
+            android:textColor="@color/color_dialog_title_text"
+            android:textSize="@dimen/dimen_dialog_title_text"
+            tools:text="标准弹框" />
+
+        <TextView
+            android:id="@+id/dialog_content_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dialog_title_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/dimen_dialog_margin_horizontal"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="@dimen/dimen_dialog_margin_horizontal"
+            android:gravity="center_horizontal"
+            android:lineSpacingMultiplier="1.2"
+            android:textColor="@color/color_dialog_content_text"
+            android:textSize="@dimen/dimen_dialog_content_text"
+            tools:text="当前状态, 内容信息, 提示信息等当前状态, 内容信息, 提示信息等当前状态, 内容信息, 提示信息等当前状态, 内容信息, 提示信息等" />
+
+        <com.xylink.uikit.BlueButton
+            android:id="@+id/dialog_primary_button"
+            android:layout_width="@dimen/dimen_dialog_button_width_big"
+            android:layout_height="44dp"
+            android:layout_below="@id/dialog_content_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/string_dialog_ok" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/dialog_close_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/image_close_right"
+        android:visibility="visible" />
+
+</RelativeLayout>

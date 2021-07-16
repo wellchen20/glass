@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_50"
+    android:focusable="true"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/view_statistics_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/statistics_label"
+                android:text="@string/statistics_network" />
+
+            <com.xylink.sdk.sample.view.StringMatrixView
+                android:id="@+id/statistics_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/title_content"
+                style="@style/statistics_label"
+                android:text="@string/statistics_content" />
+
+            <com.xylink.sdk.sample.view.StringMatrixView
+                android:id="@+id/statistics_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/statistics_label"
+                android:text="@string/statistics_participant" />
+
+            <com.xylink.sdk.sample.view.StringMatrixView
+                android:id="@+id/statistics_participant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/close_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:src="@drawable/button_close2" />
+</FrameLayout>

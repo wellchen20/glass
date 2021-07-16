@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff4f5f6"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="?attr/actionModeCloseDrawable">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="个人设置" />
+
+        <TextView
+            android:id="@+id/tv_save"
+            android:text="保存"
+            android:textSize="15sp"
+            android:textColor="#ff3876ff"
+            android:layout_gravity="end"
+            android:layout_marginEnd="?attr/listPreferredItemPaddingLeft"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:paddingStart="?attr/listPreferredItemPaddingLeft"
+        android:paddingEnd="?attr/listPreferredItemPaddingLeft">
+
+        <TextView
+            android:id="@+id/tv_name_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="名称"
+            android:textColor="#99393946"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:paddingTop="11.5dp"
+            android:paddingBottom="10dp"
+            android:textColor="#e6393946"
+            android:textSize="18sp"
+            tools:text="送姜" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="10dp" />
+
+    <FrameLayout
+        android:id="@+id/fl_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:paddingStart="?attr/listPreferredItemPaddingLeft"
+        android:paddingEnd="?attr/listPreferredItemPaddingLeft">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="快速反馈"
+            android:textColor="#e6393946"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/arrow_right" />
+
+    </FrameLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="10dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:paddingStart="?attr/listPreferredItemPaddingLeft"
+        android:paddingEnd="?attr/listPreferredItemPaddingLeft">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="版本号"
+            android:textColor="#e6393946"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_sdk_version"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:gravity="center_vertical"
+            android:textColor="#e6393946"
+            android:textSize="15sp"
+            tools:text="2.22.222" />
+
+    </FrameLayout>
+
+</LinearLayout>

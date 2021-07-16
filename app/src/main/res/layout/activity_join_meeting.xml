@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/bg_xy"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="30dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/logo_xy"
+        android:textColor="#393946"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:background="@drawable/input_xy">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/user_xy"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="45dp"/>
+            <TextView
+                android:id="@+id/tv_user"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:textSize="16sp"
+                android:text="15010322959"
+                android:paddingLeft="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:background="@drawable/input_xy"
+            android:layout_marginTop="15dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/meet_xy"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="45dp"/>
+            <TextView
+                android:id="@+id/tv_meetting"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:textSize="16sp"
+                android:text="15010322959"
+                android:paddingLeft="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:background="@drawable/input_xy"
+            android:layout_marginTop="15dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/expert"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="45dp"/>
+            <TextView
+                android:id="@+id/tv_expert"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:textSize="16sp"
+                android:text="15010322959"
+                android:paddingLeft="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="30dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/voice_xy"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="说加入会议或呼叫专家"
+                android:textColor="#fff"
+                android:gravity="center_vertical" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_dialog_bg">#FFFFFF</color>
+    <color name="color_dialog_title_text">#393946</color>
+    <color name="color_dialog_content_text">#CC393946</color>
+
+    <!--蓝色按钮-->
+    <color name="color_blue_button_text_normal">#FFFFFF</color>
+    <color name="color_blue_button_text_pressed">#99FFFFFF</color>
+    <color name="color_blue_button_text_disable">#99FFFFFF</color>
+
+    <color name="WHITE">#ffffffff</color>
+</resources>

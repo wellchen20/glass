@@ -1,0 +1,46 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowLightStatusBar" tools:targetApi="m">@bool/use_light_status</item>
+        <item name="android:statusBarColor">#0fff</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:navigationBarColor">#40000000</item>
+    </style>
+
+    <style name="AppTheme.FullScreen" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="statistics_label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/ainemo_white</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+
+    <style name="AppTheme.Dialog" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="colorControlNormal">@color/color_light_actionbar_accent</item>
+        <item name="colorControlActivated">@color/color_light_actionbar_accent</item>
+        <item name="colorControlHighlight">@color/color_light_actionbar_accent</item>
+    </style>
+
+    <style name="AlertDialogStyle" parent="AppTheme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+</resources>

@@ -1,0 +1,51 @@
+ext {
+
+    customMaven = [
+            jitpack  : "https://jitpack.io",
+            saki4510t: "http://raw.github.com/saki4510t/libcommon/master/repository/",
+    ]
+
+    sdk = [
+            buildToolsVersion: '27.0.0',
+            compileSdkVersion: 27,
+            targetSdkVersion : 27,
+            minSdkVersion    : 21,
+    ]
+
+    jdk = [
+            sourceCompatibility: JavaVersion.VERSION_1_8,
+            targetCompatibility: JavaVersion.VERSION_1_8
+    ]
+
+    gradlePlugins = [
+            androidGradle: "com.android.tools.build:gradle:3.4.1",
+    ]
+
+    libVersions = [
+            support: '27.1.1',
+    ]
+
+    libs = [
+            //android support lib
+            junit                  : 'junit:junit:4.12',
+            supportV7              : "com.android.support:appcompat-v7:${libVersions.support}",
+            constraintLayout       : 'com.android.support.constraint:constraint-layout:1.1.3',
+
+            //reactivex lib
+            rxPermission2          : 'com.github.tbruyelle:rxpermissions:0.10.2',
+            rxBinding2             : 'com.jakewharton.rxbinding2:rxbinding:2.2.0',
+            retrofit2              : 'com.squareup.retrofit2:retrofit:2.4.0',
+
+            // uvc USB外接摄像头必须 不需要的可删除
+//            serenegiantCommon      : 'com.serenegiant:common:1.5.20',
+            // 共享图片使用的三方库, 可以替换成自己的图片选择库
+            // picture selector, you may not need this, can replace with yours
+            matisse                : 'com.zhihu.android:matisse:0.5.1',
+            glide                  : 'com.github.bumptech.glide:glide:4.7.1',
+
+            // 必须, SDK需要依赖这些库, 库版本尽量保持一致, 否则有冲突自行解决
+            rxJava2                : 'io.reactivex.rxjava2:rxjava:2.2.0',
+            rxAndroid2             : 'io.reactivex.rxjava2:rxandroid:2.0.2',
+            gson                   : 'com.google.code.gson:gson:2.8.5',
+    ]
+}

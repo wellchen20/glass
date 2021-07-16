@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:navigationIcon="?attr/actionModeCloseDrawable">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="快速反馈" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/FeedbackEditText"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="?attr/listPreferredItemPaddingLeft"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="?attr/listPreferredItemPaddingLeft"
+        android:background="@drawable/alert_dialog_bg"
+        android:gravity="start"
+        android:hint="@string/default_feedback_content"
+        android:minLines="6"
+        android:padding="10dip"
+        android:singleLine="false" />
+
+    <Button
+        android:id="@+id/send_feedback_bt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="?attr/listPreferredItemPaddingLeft"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="?attr/listPreferredItemPaddingLeft"
+        android:background="@drawable/shape_button"
+        android:text="@string/send_feedback"
+        android:textColor="@color/ainemo_white"
+        android:textSize="18sp" />
+
+</LinearLayout>

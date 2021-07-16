@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.xylink.sdk.sample.ViewPagerNoSlide
+        android:id="@+id/video_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.xylink.sdk.sample.share.picture.CirclePageIndicator
+        android:id="@+id/pager_indicator_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:padding="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:radius="4dp" />
+
+    <include
+        android:id="@+id/share_screen"
+        layout="@layout/layout_share_screen"
+        android:visibility="gone" />
+
+    <!--  共享图片  -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.xylink.sdk.sample.share.picture.CirclePageIndicator
+        android:id="@+id/pager_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!--  会控  -->
+    <LinearLayout
+        android:id="@+id/ll_host_meeting"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/hold_meeting_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:backgroundTint="#393946"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="主持会议"
+            app:titleTextColor="#FFFFFF"
+            tools:targetApi="lollipop" />
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <!--  top bar  -->
+    <FrameLayout
+        android:id="@+id/fl_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/xylink_top_bottom_color"
+        android:clickable="true"
+        android:fitsSystemWindows="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--网络提示-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/network_state"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/network_state_four" />
+
+            <TextView
+                android:id="@+id/network_state_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingLeft="2.5dp"
+                android:paddingRight="5dp"
+                android:text="00:00:00"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/ainemo_white"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!--  号码  -->
+        <TextView
+            android:id="@+id/tv_call_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center"
+            android:textColor="@color/ainemo_white"
+            android:textSize="15sp"
+            tools:text="913552224984" />
+
+        <!--挂断-->
+        <ImageButton
+            android:id="@+id/drop_call"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:src="@drawable/hangup_new" />
+
+    </FrameLayout>
+
+    <!--  bottom bar -->
+    <View
+        android:id="@+id/view_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:background="@color/xylink_top_bottom_color"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <android.support.constraint.Group
+        android:id="@+id/group_visibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="fl_top_bar,ll_more,rl_record,ll_audio,mic_mute_container,ll_video,view_bg,tv_meeting_members"
+        tools:visibility="visible" />
+
+    <!--关闭摄像头-->
+    <LinearLayout
+        android:id="@+id/ll_video"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/mic_mute_container">
+
+        <ImageButton
+            android:id="@+id/close_video"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/video" />
+
+        <TextView
+            android:id="@+id/video_mute_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/close_video"
+            android:textColor="@color/ainemo_white"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!--静音-->
+    <LinearLayout
+        android:id="@+id/mic_mute_container"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/ll_video"
+        app:layout_constraintRight_toLeftOf="@id/rl_record">
+
+        <ImageButton
+            android:id="@+id/mute_mic_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:background="@null"
+            android:longClickable="true"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_toolbar_mic" />
+
+        <TextView
+            android:id="@+id/mute_mic_btn_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mute_mic_btn"
+            android:text="@string/mute_mic"
+            android:textColor="@color/ainemo_white"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!--共享-->
+    <LinearLayout
+        android:id="@+id/rl_record"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/mic_mute_container"
+        app:layout_constraintRight_toLeftOf="@id/ll_audio">
+
+        <ImageButton
+            android:id="@+id/btn_more_share"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/share" />
+
+        <TextView
+            android:id="@+id/tv_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bottom_bar_share"
+            android:textColor="@color/ainemo_white"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!--主持会议-->
+    <LinearLayout
+        android:id="@+id/ll_audio"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/rl_record"
+        app:layout_constraintRight_toLeftOf="@id/ll_more">
+
+        <ImageButton
+            android:id="@+id/btn_more_host_meeting"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/hold_meeting" />
+
+        <TextView
+            android:id="@+id/audio_only_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bottom_bar_host_meeting"
+            android:textColor="@color/ainemo_white"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_meeting_members"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="10sp"
+        app:layout_constraintCircle="@+id/ll_audio"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="20dp"
+        app:layout_constraintEnd_toEndOf="@id/ll_audio"
+        app:layout_constraintTop_toTopOf="@id/ll_audio"
+        tools:text="100" />
+
+    <!--更多-->
+    <LinearLayout
+        android:id="@+id/ll_more"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/ll_audio"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageButton
+            android:id="@+id/hold_meeting_more"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/more" />
+
+        <TextView
+            android:id="@+id/rmore_img_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更多"
+            android:textColor="@color/ainemo_white"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!--录制 切换摄像头-->
+    <LinearLayout
+        android:id="@+id/ll_tips_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_top_bar"
+        app:layout_goneMarginTop="50dp">
+
+        <!--录制计时-->
+        <LinearLayout
+            android:id="@+id/conversation_recording_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/shape_label_orange"
+            android:gravity="center_vertical"
+            android:padding="3dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/video_recording_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dp"
+                android:paddingTop="@dimen/notification_top_size"
+                android:paddingBottom="@dimen/notification_top_size"
+                android:src="@drawable/ic_toolbar_state_recording" />
+
+            <TextView
+                android:id="@+id/video_recording_timer"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingTop="1dp"
+                android:paddingRight="5dp"
+                android:text="@string/recording_text_preparing"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/ainemo_white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_lock_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/call_live_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/notification_padding_size"
+                android:layout_marginRight="@dimen/notification_padding_size"
+                android:paddingTop="@dimen/notification_top_size"
+                android:paddingBottom="@dimen/notification_top_size"
+                android:text="@string/locked_people"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white_90"
+                android:textSize="@dimen/notification_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/notification_padding_size"
+                android:background="@drawable/lock_people_bg"
+                android:gravity="center"
+                android:text="@string/unlock_people"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#393946"
+                android:textSize="@dimen/notification_text_size" />
+
+        </LinearLayout>
+
+        <!--切换摄像头-->
+        <LinearLayout
+            android:id="@+id/switch_camera_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageButton
+                android:id="@+id/switch_camera"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/toolbar_button_bg_style"
+                android:longClickable="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/switch_camera" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/switch_camera"
+                android:textColor="@color/ainemo_white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_chairman_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/shape_label_orange"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingTop="1dp"
+                android:paddingRight="5dp"
+                android:text="主会场模式"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/ainemo_white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--more-->
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/more_layout_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/call_more_list_bg"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:visibility="gone"
+        app:divider="@drawable/divider_line"
+        app:layout_constraintBottom_toTopOf="@id/ll_more"
+        app:layout_constraintLeft_toLeftOf="@id/ll_more"
+        app:layout_constraintRight_toRightOf="parent"
+        app:showDividers="middle"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_more_record"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:clickable="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/start_record_video"
+            android:textColor="@color/ainemo_white_90"
+            android:textSize="@dimen/sp13"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_nore_call_mode"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:clickable="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/switch_call_module"
+            android:textColor="@color/ainemo_white_90"
+            android:textSize="@dimen/sp13"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:clickable="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/call_dtmf_keyboard"
+            android:textColor="@color/ainemo_white_90"
+            android:textSize="@dimen/sp13"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:clickable="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/button_close_pip"
+            android:textColor="@color/ainemo_white_90"
+            android:textSize="@dimen/sp13"
+            android:visibility="visible" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <include
+        android:id="@+id/operation_volume_brightness"
+        layout="@layout/volume_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/view_call_invite"
+        layout="@layout/view_call_invite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fl_top_bar" />
+
+    <include
+        android:id="@+id/view_call_detail"
+        layout="@layout/view_call_detail"
+        android:visibility="gone" />
+
+    <com.xylink.sdk.sample.view.FeccBar
+        android:id="@+id/fecc_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/dtmf"
+        layout="@layout/dtmf"
+        android:layout_width="295dp"
+        android:layout_height="305dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--  共享  -->
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/ll_share_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/call_more_list_bg"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:visibility="gone"
+        app:divider="@drawable/divider_line"
+        app:layout_constraintBottom_toTopOf="@id/rl_record"
+        app:layout_constraintLeft_toLeftOf="@id/rl_record"
+        app:layout_constraintRight_toRightOf="@id/rl_record"
+        app:showDividers="middle">
+
+        <TextView
+            android:id="@+id/tv_share_screen"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:clickable="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="屏幕"
+            android:textColor="@color/ainemo_white_90"
+            android:textSize="@dimen/sp13"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_share_photo"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:clickable="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="图片"
+            android:textColor="@color/ainemo_white_90"
+            android:textSize="@dimen/sp13"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_whiteboard"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:clickable="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="打开白板"
+            android:textColor="@color/ainemo_white_90"
+            android:textSize="@dimen/sp13"
+            android:visibility="visible" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <ViewStub
+        android:id="@+id/view_statistics_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/view_statistics_info" />
+
+    <TextView
+        android:id="@+id/tv_caption_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pager_indicator_video"
+        tools:text="字幕消息测试"
+        tools:visibility="visible" />
+</android.support.constraint.ConstraintLayout>
